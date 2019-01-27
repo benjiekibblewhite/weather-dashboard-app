@@ -55,8 +55,10 @@ export default compose(
 						lowTemp: data.main.temp_min
 					},
 					right: {
-						windSpeed: data.wind.speed,
-						windDirection: data.wind.deg
+						windSpeed: data.wind.speed * 3.6,
+						windDirection: switch(data.wind.deg) {
+              case()
+            }
 					}
 			  }
 			: {

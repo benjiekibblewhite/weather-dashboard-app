@@ -3,7 +3,7 @@ import { View } from "react-native";
 import Wind from "./Wind";
 import { sidePanelStyle } from "../design";
 
-const Right = () => (
+const Right = ({ windDirection, windSpeed }) => (
 	<View style={sidePanelStyle}>
 		<Wind windSpeed="18.36km/hr" windDirection="SSW" />
 	</View>
