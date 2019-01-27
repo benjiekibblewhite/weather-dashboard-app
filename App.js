@@ -1,15 +1,14 @@
 import { Font, KeepAwake } from "expo";
+import React from "react";
 import { StyleSheet, View } from "react-native";
+import { StatusBar } from "react-native";
 import { branch, compose, lifecycle, mapProps, renderComponent, withState } from "recompose";
 
 import Center from "./src/components/Center";
 import Left from "./src/components/Left";
-import Loading from "./src/screens/Loading";
-import React from "react";
 import Right from "./src/components/Right";
-import { StatusBar } from "react-native";
 import { colors } from "./src/design";
-import fetchHoc from "fetch-hoc";
+import Loading from "./src/screens/Loading";
 
 const styles = StyleSheet.create({
 	container: {

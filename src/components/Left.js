@@ -1,8 +1,8 @@
-import { StyleSheet, View } from "react-native";
-import { distances, sidePanelStyle } from "../design";
-
-import Conditions from "./Conditions";
 import React from "react";
+import { StyleSheet, View } from "react-native";
+
+import { distances, sidePanelStyle } from "../design";
+import Conditions from "./Conditions";
 
 const styles = StyleSheet.create({
 	container: {

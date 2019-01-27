@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import { StyleSheet } from "react-native";
+
 import Text from "./Text";
 
 const styles = StyleSheet.create({

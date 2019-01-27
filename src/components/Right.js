@@ -1,7 +1,8 @@
 import React from "react";
 import { View } from "react-native";
-import Wind from "./Wind";
+
 import { sidePanelStyle } from "../design";
+import Wind from "./Wind";
 
 const Right = ({ windDirection, windSpeed }) => (
 	<View style={sidePanelStyle}>

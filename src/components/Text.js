@@ -1,6 +1,6 @@
+import React from "react";
 import { Text as RNText, StyleSheet } from "react-native";
 
-import React from "react";
 import { colors } from "../design";
 
 const styles = StyleSheet.create({

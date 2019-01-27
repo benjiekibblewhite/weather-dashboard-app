@@ -1,8 +1,8 @@
+import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 
-import React from "react";
-import Text from "./Text";
 import { distances } from "../design";
+import Text from "./Text";
 
 const styles = StyleSheet.create({
 	container: {
