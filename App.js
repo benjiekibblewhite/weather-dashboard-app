@@ -33,7 +33,6 @@ export default compose(
 	withState("fontLoaded", "setFontLoaded", false),
 	lifecycle({
 		async componentDidMount() {
-			console.log(this.props);
 			await Font.loadAsync({
 				"Lato-Light": require("./assets/fonts/Lato-Light.ttf")
 			});
@@ -56,9 +55,7 @@ export default compose(
 					},
 					right: {
 						windSpeed: data.wind.speed * 3.6,
-						windDirection: switch(data.wind.deg) {
-              case()
-            }
+						windDirection: data.wind.deg
 					}
 			  }
 			: {

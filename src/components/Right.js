@@ -5,7 +5,7 @@ import { sidePanelStyle } from "../design";
 
 const Right = ({ windDirection, windSpeed }) => (
 	<View style={sidePanelStyle}>
-		<Wind windSpeed="18.36km/hr" windDirection="SSW" />
+		<Wind windSpeed={windSpeed} windDirection={windDirection} />
 	</View>
 );
 
