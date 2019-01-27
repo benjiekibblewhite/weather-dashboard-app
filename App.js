@@ -9,7 +9,7 @@ import React from "react";
 import Right from "./src/components/Right";
 import { StatusBar } from "react-native";
 import { colors } from "./src/design";
-import fetch from "fetch-hoc";
+import fetchHoc from "fetch-hoc";
 
 const styles = StyleSheet.create({
 	container: {
@@ -29,9 +29,15 @@ const App = ({ center, left, right }) => (
 	</View>
 );
 
+const getData = () =>
+	fetch("https://api.openweathermap.org/data/2.5/weather?q=Toronto,ca&units=metric&appid=1aecf5a25c8f28e42889cde41943081b")
+		.then(res => res.json())
+		.then(res => res)
+		.catch(err => console.error(err));
+
 export default compose(
-	fetch("https://api.openweathermap.org/data/2.5/weather?q=Toronto,ca&units=metric&appid=1aecf5a25c8f28e42889cde41943081b"),
 	withState("fontLoaded", "setFontLoaded", false),
+	withState("data", "setData", null),
 	lifecycle({
 		async componentDidMount() {
 			StatusBar.setHidden(true);
@@ -39,11 +45,14 @@ export default compose(
 			await Font.loadAsync({
 				"Lato-Light": require("./assets/fonts/Lato-Light.ttf")
 			});
-
 			this.props.setFontLoaded(true);
+			this.props.setData(await getData());
+			setInterval(async () => {
+				this.props.setData(await getData());
+			}, 30 * 60000); // refetch every 30 minutes
 		}
 	}),
-	branch(({ fontLoaded, loading }) => !fontLoaded || loading, renderComponent(Loading)),
+	branch(({ fontLoaded, data }) => !fontLoaded || !data, renderComponent(Loading)),
 	mapProps(({ data }) =>
 		data
 			? {
@@ -52,7 +61,7 @@ export default compose(
 						icon: data.weather[0].icon
 					},
 					center: {
-						temp: data.main.temp,
+						temp: data.main.temp.toFixed(0),
 						highTemp: data.main.temp_max,
 						lowTemp: data.main.temp_min
 					},
