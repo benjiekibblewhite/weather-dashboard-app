@@ -37,8 +37,9 @@ const Wind = ({ icon, windSpeed, windDirection }) => {
 	return (
 		<View style={styles.container}>
 			<Image source={require("../../assets/wind.png")} style={styles.icon} />
-			<Text style={styles.text}>{windSpeed} km/h</Text>
-			<Text style={styles.text}>{direction}</Text>
+			<Text style={styles.text}>
+				{windSpeed} km/h {direction}
+			</Text>
 		</View>
 	);
 };

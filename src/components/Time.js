@@ -31,7 +31,7 @@ export default class Time extends Component {
 	render() {
 		return (
 			<Text style={styles.time}>
-				{this.state.time.getHours()}:{this.state.time.getMinutes()}
+				{this.state.time.getHours()}:{("0" + this.state.time.getMinutes()).slice(-2)}
 			</Text>
 		);
 	}

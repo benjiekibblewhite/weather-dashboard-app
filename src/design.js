@@ -14,8 +14,8 @@ const sidePanelStyle = {
 	justifyContent: "flex-end",
 	alignItems: "center",
 	paddingBottom: distances.gap * 3,
-	paddingLeft: distances.gap
-	// paddingRight: distances.gap
+	paddingLeft: distances.gap,
+	paddingRight: distances.gap
 };
 
 export { distances, colors, sidePanelStyle };
